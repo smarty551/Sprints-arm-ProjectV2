@@ -85,86 +85,86 @@ void RCC_EnableCLK (EnumRcc_EnConfigType RCC_Selected)
     /*Timer clock enable*/
     case RCC_TIMER0_EN :
     {
-        SYSCTL_PRTIMER_R |= (SYSCTL_PRTIMER_R0);
+        SYSCTL_RCGCTIMER_R |= (SYSCTL_RCGCTIMER_R0);
     }
     break;
 
     case RCC_TIMER1_EN :
     {
-        SYSCTL_PRTIMER_R |= (SYSCTL_PRTIMER_R1);
+        SYSCTL_RCGCTIMER_R |= (SYSCTL_RCGCTIMER_R1);
     }
     break;
 
     case RCC_TIMER2_EN :
     {
-        SYSCTL_PRTIMER_R |= (SYSCTL_PRTIMER_R2);
+        SYSCTL_RCGCTIMER_R |= (SYSCTL_RCGCTIMER_R2);
     }
     break;
 
     case RCC_TIMER3_EN :
     {
-        SYSCTL_PRTIMER_R |= (SYSCTL_PRTIMER_R3);
+        SYSCTL_RCGCTIMER_R |= (SYSCTL_RCGCTIMER_R3);
     }
     break;
 
     case RCC_TIMER4_EN :
     {
-        SYSCTL_PRTIMER_R |= (SYSCTL_PRTIMER_R4);
+        SYSCTL_RCGCTIMER_R |= (SYSCTL_RCGCTIMER_R4);
     }
     break;
 
     case RCC_TIMER5_EN :
     {
-        SYSCTL_PRTIMER_R |= (SYSCTL_PRTIMER_R5);
+        SYSCTL_RCGCTIMER_R |= (SYSCTL_RCGCTIMER_R5);
     }
     break;
     /*UART clock enable*/
 
     case RCC_UART0_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R0);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCTIMER_R0);
     }
     break;
 
     case RCC_UART1_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R1);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCUART_R1);
     }
     break;
 
     case RCC_UART2_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R2);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCUART_R2);
     }
     break;
 
     case RCC_UART3_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R3);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCUART_R3);
     }
     break;
 
     case RCC_UART4_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R4);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCUART_R4);
     }
     break;
 
     case RCC_UART5_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R5);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCUART_R5);
     }
     break;
 
     case RCC_UART6_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R6);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCUART_R6);
     }
     break;
 
     case RCC_UART7_EN :
     {
-        SYSCTL_PRUART_R |= (SYSCTL_PRUART_R7);
+        SYSCTL_RCGCUART_R |= (SYSCTL_RCGCUART_R7);
     }
     break;
     default :

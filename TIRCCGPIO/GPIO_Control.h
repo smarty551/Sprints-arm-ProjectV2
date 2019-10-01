@@ -34,6 +34,12 @@ typedef struct
 #define GPIO_STRENGTH_6MA       0x00000065  /* 6mA drive strength */
 #define GPIO_STRENGTH_8MA       0x00000066  /* 8mA drive strength */
 
+#define GPIO_PORTA_BASE         0x40004000  // GPIO Port A
+#define GPIO_PORTB_BASE         0x40005000  // GPIO Port B
+#define GPIO_PORTC_BASE         0x40006000  // GPIO Port C
+#define GPIO_PORTD_BASE         0x40007000  // GPIO Port D
+#define GPIO_PORTE_BASE         0x40024000  // GPIO Port E
+#define GPIO_PORTF_BASE         0x40025000  // GPIO Port F
 
 
 
