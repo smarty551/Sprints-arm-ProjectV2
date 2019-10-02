@@ -2,7 +2,7 @@
  * GPIO_Control.h
  *
  *  Created on: Oct 1, 2019
- *      Author: smart
+ *      Author: Samir Ibrahim
  */
 
 #ifndef GPIO_CONTROL_H_
@@ -13,6 +13,8 @@ typedef struct
   uint32_t Pin;       /* Specifies the GPIO pins to be configured.*/
 
   uint32_t Mode;      /* Specifies the operating mode for the selected pins.*/
+
+  uint32_t OpenDrain;  /*Specifies open drain enabled or disabled.*/
 
   uint32_t Pull;      /* Specifies the Pull-up or Pull-Down activation for the selected pins.*/
 
@@ -41,6 +43,17 @@ typedef struct
 #define GPIO_PORTE_BASE         0x40024000  // GPIO Port E
 #define GPIO_PORTF_BASE         0x40025000  // GPIO Port F
 
+#define PIN_INPUT               (0X00u)
+#define PIN_OUTPUT              (0X01u)
 
+#define OPENDRAIN_ENABLED       (0X00u)
+#define OPENDRAIN_DISABLED      (0X01u)
 
+#define PULLUP                  (0X00U)
+#define PULLDOWN                (0X01U)
+#define SET_HIGH                (0X01U)
+#define SET_LOW                (0X00U)
+void GPIO_PinConfig (uint32_t Port_Base, GPIO_InitTypeDef * GPIO_InitPtr);
+void GPIO_PinWrite(uint32_t Port_Base, uint32_t PinToEdit, uint32_t PinState);
+uint32_t GPIO_PinRead (uint32_t Port_Base, uint32_t PinToRead);
 #endif /* GPIO_CONTROL_H_ */
