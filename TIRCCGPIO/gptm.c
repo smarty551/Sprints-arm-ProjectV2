@@ -34,12 +34,12 @@ void GPTM_Init(GPTM_POBConfig_t* a_GPTMConfig_ptr)
 
         /* select timer mode and count direction mode */
         TIMER0_TAMR_R = (TIMER0_TAMR_R & 0xFFFFFFFCU) | (a_GPTMConfig_ptr->TimerMode);
-        TIMER0_TAMR_R = (TIMER0_TAMR_R & 0xFFFFFFEFU) | (a_GPTMConfig_ptr->CountDirection);
+        TIMER0_TAMR_R = (TIMER0_TAMR_R & 0xFFFFFFEFU) | ((a_GPTMConfig_ptr->CountDirection) << TACDIR );
 
         /* set interval load register value */
         if (a_GPTMConfig_ptr->PeriodType == ONE_MILLISECONDS)
         {
-            TIMER0_TAILR_R = 15000;
+            TIMER0_TAILR_R = 15999U;
         }
         else if(a_GPTMConfig_ptr->PeriodType == ONE_MICROSECONDS)
         {
@@ -61,7 +61,7 @@ void GPTM_Init(GPTM_POBConfig_t* a_GPTMConfig_ptr)
             TIMER0_IMR_R = (TIMER0_IMR_R & 0xFFFFFFFEU) | ((a_GPTMConfig_ptr->INT_State)  << GPTM_TIMERA_TIMEOUT_INT_MASK_BIT);
 
             /* enable NVIC Interrupt */
-         //   NVIC->ISER[0] = ( NVIC->ISER[0]) | (1 << 19U);
+            //   NVIC->ISER[0] = ( NVIC->ISER[0]) | (1 << 19U);
         }
         else if(a_GPTMConfig_ptr->INT_State == POLLING)
         {
@@ -106,6 +106,7 @@ void GPTM_Delay(uint32_t a_Delay)
 
     for(loop_index = 0U; loop_index < a_Delay; loop_index++)
     {
+        //   while(TIMER0_RIS_R & 0x00000001 == 0);
         while(GET_BIT(TIMER0_RIS_R, TATORIS) == 0 );         /* wait for TimerA timeout flag to set */
         SET_BIT(TIMER0_ICR_R, TATOCINT);                    /* clear timeout flag by writing a 1 to this bit clears the TATORIS bit in the GPTMRIS register*/
     }

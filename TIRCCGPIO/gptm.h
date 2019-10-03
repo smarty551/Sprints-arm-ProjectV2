@@ -13,7 +13,9 @@
 #include "tm4c123gh6pm.h"
 
 #define TATORIS         (0U)           /* GPTM Timer A #Bit Number of Time-Out Raw Interrupt */
-#define TATOCINT        (0U)          /*  GPTM Timer A #Bit Number of Time-Out Raw Interrupt */
+#define TATOCINT        (0U)          /*  GPTM Timer A #Bit Number of GPTM Interrupt Clear */
+#define TATOMIS         (0U)          /*  GPTM Timer A #Bit Number of GPTM Masked Interrupt Status */
+#define TACDIR          (4U)          /*  GPTM Timer A #Bit Number of GPTM Timer A Count Direction */
 
 typedef enum
 {
