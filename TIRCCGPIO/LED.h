@@ -22,7 +22,7 @@
  * definition(s) by user
  ***************************************************************************************************************/
 #define PATTERN_STATES   (6)
-#define PATTERN_STEP    (1000)
+#define PATTERN_STEP    (10)
 
 
 /***************************************************************************************************************
@@ -38,7 +38,7 @@ typedef enum
 
 typedef enum
 {
-    MALFUNCTION_PATTERN_TIME = 300000,
+    MALFUNCTION_PATTERN_TIME = 3000,
     DEVICE_SEARCH_PATTERN_TIME = 1500,
     VERIFICATION_TIME = 1200,
     CONNECTION_ON_PATTERN_TIME = 300
